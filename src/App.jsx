@@ -6,6 +6,7 @@ import DaySection from "./components/DaySection";
 import { days } from "./data/entries";
 import Marquee from "./components/Marquee";
 import Nav from "./components/Nav";
+import SketchTable from "./components/SketchTable";
 
 export default function App() {
   useEffect(() => {

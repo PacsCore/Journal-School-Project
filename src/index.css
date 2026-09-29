@@ -17,3 +17,34 @@ body {
 }
 
 img { max-width: 100%; display: block; } 
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 4vw;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  z-index: 10;
+  background: linear-gradient(var(--paper), transparent);
+}
+
+.roll {
+  display: inline-block;
+  height: 1.2em;
+  line-height: 1.2em;
+  overflow: hidden;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.roll-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.roll:hover .roll-inner { transform: translateY(-50%); }
+.roll-copy { color: var(--red); }

@@ -23,6 +23,7 @@ export default function App() {
       <Hero />
       <Marquee />
       {days.map((day) => <DaySection key={day.date} day={day} />)}
+      <SketchTable />
     </main>
   );
 }

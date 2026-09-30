@@ -74,3 +74,49 @@ img { max-width: 100%; display: block; }
   font-size: 11px;
   margin-top: 8px;
 }
+
+.museum-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5vh;
+}
+
+.museum-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 4vw;
+}
+
+.museum-head h2 { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 400; }
+.museum-head span { font-family: var(--mono); color: var(--red); }
+
+.museum-track {
+  display: flex;
+  gap: 3vw;
+  padding: 0 4vw;
+  width: max-content;
+}
+
+.room-card {
+  width: min(420px, 75vw);
+  height: 50vh;
+  padding: 2rem;
+  border: 1px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.room-card:nth-child(3n + 1) { background: var(--blue); color: var(--paper); }
+.room-card:nth-child(3n + 2) { background: var(--paper); }
+.room-card:nth-child(3n) { background: var(--yellow); }
+
+.room-nr { font-family: var(--mono); font-size: 0.8rem; }
+.room-card h3 { font-size: 2.2rem; font-weight: 400; }

@@ -7,6 +7,7 @@ import { days } from "./data/entries";
 import Marquee from "./components/Marquee";
 import Nav from "./components/Nav";
 import SketchTable from "./components/SketchTable";
+import Museum from "./components/Museum";
 
 export default function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function App() {
       <Marquee />
       {days.map((day) => <DaySection key={day.date} day={day} />)}
       <SketchTable />
+      <Museum />
     </main>
   );
 }

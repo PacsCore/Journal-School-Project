@@ -29,6 +29,7 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   z-index: 10;
   background: linear-gradient(var(--paper), transparent);
+  mix-blend-mode: difference;
 }
 
 .roll {

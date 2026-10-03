@@ -6,18 +6,20 @@
   --yellow: #f2c230;
   --serif: "Instrument Serif", Georgia, serif;
   --mono: "JetBrains Mono", monospace;
+  --display: "Anton", sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background: #111111;
+  color: var(--paper);
   font-family: var(--serif);
 }
 
-img { max-width: 100%; display: block; } 
+img { max-width: 100%; display: block; }
 
+/* ---------- Nav ---------- */
 .nav {
   position: fixed;
   inset: 0 0 auto 0;
@@ -28,7 +30,6 @@ img { max-width: 100%; display: block; }
   font-size: 0.9rem;
   text-transform: uppercase;
   z-index: 10;
-  background: linear-gradient(var(--paper), transparent);
   mix-blend-mode: difference;
 }
 
@@ -37,7 +38,7 @@ img { max-width: 100%; display: block; }
   height: 1.2em;
   line-height: 1.2em;
   overflow: hidden;
-  color: var(--ink);
+  color: #fff;
   text-decoration: none;
 }
 
@@ -50,10 +51,54 @@ img { max-width: 100%; display: block; }
 .roll:hover .roll-inner { transform: translateY(-50%); }
 .roll-copy { color: var(--red); }
 
+/* ---------- Hero ---------- */
+.hero { height: 300vh; position: relative; }
+
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.hero-title-wrap { position: relative; z-index: 1; text-align: center; }
+
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(4rem, 15vw, 15rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+}
+
+.hero-sub {
+  font-family: var(--mono);
+  color: var(--red);
+  margin-top: 1.2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 4vh;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--ink);
+}
+
+/* ---------- Skizzen-Tisch ---------- */
 .table {
   position: relative;
   height: 85vh;
-  background: #e8e1d3;
+  background: #1e1b17;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -62,8 +107,9 @@ img { max-width: 100%; display: block; }
   position: absolute;
   width: min(220px, 42vw);
   background: #fff;
+  color: var(--ink);
   padding: 10px 10px 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   cursor: grab;
   touch-action: none;
 }
@@ -76,6 +122,7 @@ img { max-width: 100%; display: block; }
   margin-top: 8px;
 }
 
+/* ---------- Museum ---------- */
 .museum-sticky {
   position: sticky;
   top: 0;
@@ -108,7 +155,7 @@ img { max-width: 100%; display: block; }
   width: min(420px, 75vw);
   height: 50vh;
   padding: 2rem;
-  border: 1px solid var(--ink);
+  border: 1px solid rgba(243, 239, 230, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -116,12 +163,13 @@ img { max-width: 100%; display: block; }
 }
 
 .room-card:nth-child(3n + 1) { background: var(--blue); color: var(--paper); }
-.room-card:nth-child(3n + 2) { background: var(--paper); }
-.room-card:nth-child(3n) { background: var(--yellow); }
+.room-card:nth-child(3n + 2) { background: var(--paper); color: var(--ink); }
+.room-card:nth-child(3n) { background: var(--yellow); color: var(--ink); }
 
 .room-nr { font-family: var(--mono); font-size: 0.8rem; }
 .room-card h3 { font-size: 2.2rem; font-weight: 400; }
 
+/* ---------- Papier-Korn ---------- */
 body::before {
   content: "";
   position: fixed;
@@ -131,27 +179,3 @@ body::before {
   opacity: 0.18;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-
-.hero { height: 300vh; position: relative; }
-
-.hero-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-}
-
-.hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-
-.hero-title-wrap { position: relative; z-index: 1; text-align: center; }
-.hero-title {
-  font-size: clamp(3rem, 10vw, 9rem);
-  font-weight: 400;
-  line-height: 1;
-  display: flex;
-  justify-content: center;
-}
-.hero-sub { font-family: var(--mono); color: var(--red); margin-top: 1rem; }
-.scroll-hint { position: absolute; bottom: 4vh; font-family: var(--mono); font-size: 0.8rem; }

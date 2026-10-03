@@ -4,7 +4,6 @@ import "lenis/dist/lenis.css";
 import Hero from "./components/Hero";
 import DaySection from "./components/DaySection";
 import { days } from "./data/entries";
-import Marquee from "./components/Marquee";
 import Nav from "./components/Nav";
 import SketchTable from "./components/SketchTable";
 import Museum from "./components/Museum";
@@ -22,7 +21,6 @@ export default function App() {
     <main>
       <Nav />
       <Hero />
-      <Marquee />
       {days.map((day) => <DaySection key={day.date} day={day} />)}
       <SketchTable />
       <Museum />

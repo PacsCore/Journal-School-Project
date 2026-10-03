@@ -18,12 +18,14 @@ export default function App() {
   }, []);
 
   return (
-    <main>
+    <main id="top">
       <Nav />
       <Hero />
-      {days.map((day) => <DaySection key={day.date} day={day} />)}
       <SketchTable />
       <Museum />
+      <div id="tage">
+        {days.map((day) => <DaySection key={day.date} day={day} />)}
+      </div>
     </main>
   );
 }

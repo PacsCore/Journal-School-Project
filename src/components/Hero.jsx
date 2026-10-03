@@ -29,8 +29,8 @@ function colorAt(x, y) {
 
 // Welliges Feld in der Mitte, das frei bleibt (für den Titel)
 function inCartouche(x, y, w, h) {
-  const cw = Math.min(w * (w < 700 ? 0.85 : 0.6), 900) / 2;
-  const ch = Math.min(h * 0.38, 340) / 2;
+  const cw = Math.min(w * (w < 700 ? 0.92 : 0.75), 1300) / 2;
+  const ch = Math.min(h * 0.45, 420) / 2;
   const wave = 16;
   return (
     Math.abs(x - w / 2) < cw + wave * Math.sin(y * 0.04) &&
@@ -41,6 +41,7 @@ function inCartouche(x, y, w, h) {
 function buildShards(ctx, w, h) {
   const count = Math.round((w * h) / 1300);
   const step = Math.sqrt((w * h) / count);
+  const maxLen = Math.hypot(w / 2, h / 2);
 
   // Punkte in einem leicht verwackelten Raster → gleichmäßig, aber unregelmäßig
   const pts = [];
@@ -77,20 +78,26 @@ function buildShards(ctx, w, h) {
       pattern: Math.random() < 0.05,
       vx: dx / len,
       vy: dy / len,
-      dist: 400 + Math.random() * 900,
-      spin: (Math.random() - 0.5) * 6,
-      delay: (len / Math.hypot(w / 2, h / 2)) * 900 + Math.random() * 250,
+      push: 60 + Math.random() * 140,          // wie weit er seitlich wegspringt
+      fall: h * (1.3 + Math.random() * 0.5),  // wie tief er fällt
+      spin: (Math.random() - 0.5) * 5,
+      // wann er abbricht: Mitte zuerst, außen zuletzt (0 bis ~0.65 vom Scroll)
+      start: (len / maxLen) * 0.5 + Math.random() * 0.15,
+      delay: (len / maxLen) * 900 + Math.random() * 250, // fürs Intro beim Laden
     });
   });
 
   return shards;
 }
 
-function drawShard(ctx, s, intro, fly) {
+function drawShard(ctx, s, intro, progress) {
+  // Jeder Stein hat sein eigenes Zeitfenster zum Fallen
+  const f = clamp((progress - s.start) / 0.35);
+  if (f >= 1) return; // schon aus dem Bild gefallen
+
   const scale = easeOut(intro);
-  const f = fly * fly;
-  const x = s.x + s.vx * s.dist * f;
-  const y = s.y + s.vy * s.dist * f + 600 * f * f; // + Schwerkraft
+  const x = s.x + s.vx * s.push * f;
+  const y = s.y + s.vy * s.push * f + s.fall * f * f; // f² → beschleunigt wie Schwerkraft
 
   ctx.save();
   ctx.translate(x, y);
@@ -125,9 +132,9 @@ export default function Hero() {
   const canvasRef = useRef(null);
 
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });
-  const bg = useTransform(scrollYProgress, [0.45, 0.9], ["#f3efe6", "#111111"]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-  const titleScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.92]);
+  const bg = useTransform(scrollYProgress, [0.3, 0.85], ["#f3efe6", "#111111"]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  const titleScale = useTransform(scrollYProgress, [0, 0.25], [1, 0.92]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -149,12 +156,10 @@ export default function Hero() {
     window.addEventListener("resize", resize);
 
     const loop = (now) => {
-      const fly = clamp(scrollYProgress.get() / 0.7);
+      const progress = scrollYProgress.get();
+      const elapsed = now - start;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      if (fly < 1) {
-        const elapsed = now - start;
-        for (const s of shards) drawShard(ctx, s, clamp((elapsed - s.delay) / 500), fly);
-      }
+      for (const s of shards) drawShard(ctx, s, clamp((elapsed - s.delay) / 500), progress);
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
@@ -165,7 +170,7 @@ export default function Hero() {
     };
   }, [scrollYProgress]);
 
-  const word = "Barcelona";
+  const word = "BARCELONA";
 
   return (
     <section ref={sectionRef} className="hero">
@@ -187,7 +192,7 @@ export default function Hero() {
               </span>
             ))}
           </h1>
-          <p className="hero-sub">2026 · 20.–27. September</p>
+          <p className="hero-sub">2026 · Klasse 8B · 20.–27. September</p>
         </motion.div>
 
         <motion.p className="scroll-hint" style={{ opacity: titleOpacity }}>

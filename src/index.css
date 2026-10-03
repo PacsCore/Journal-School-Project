@@ -169,7 +169,6 @@ img { max-width: 100%; display: block; }
 .room-nr { font-family: var(--mono); font-size: 0.8rem; }
 .room-card h3 { font-size: 2.2rem; font-weight: 400; }
 
-/* ---------- Papier-Korn ---------- */
 body::before {
   content: "";
   position: fixed;
@@ -178,4 +177,68 @@ body::before {
   z-index: 100;
   opacity: 0.18;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.timeline { padding: 20vh 4vw; }
+
+.timeline-head p {
+  font-family: var(--mono);
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.timeline-head h2 {
+  font-family: var(--display);
+  font-size: clamp(3rem, 10vw, 9rem);
+  font-weight: 400;
+  line-height: 0.9;
+  margin-bottom: 12vh;
+}
+
+.timeline-body { position: relative; max-width: 1100px; margin: 0 auto; }
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--paper);
+  transform-origin: top;
+}
+
+.day { position: relative; width: 50%; padding: 0 4rem 14vh; }
+.day.left { text-align: right; }
+.day.right { margin-left: 50%; }
+
+.day-dot {
+  position: absolute;
+  top: 0.5rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 40% 60% 55% 45%;
+}
+.day.left .day-dot { right: -9px; }
+.day.right .day-dot { left: -9px; }
+
+.day-date { font-family: var(--display); font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1; }
+.day-date span {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--red);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.day h3 { font-size: 2rem; font-weight: 400; margin-top: 0.5rem; }
+.day-place { font-family: var(--mono); font-size: 0.8rem; opacity: 0.6; margin: 0.3rem 0 1rem; }
+.day ul { list-style: none; display: grid; gap: 0.5rem; }
+.day li span { font-family: var(--mono); font-size: 0.8rem; color: #d99a2b; margin-right: 0.6rem; }
+
+@media (max-width: 700px) {
+  .timeline-line { left: 8px; }
+  .day, .day.right { width: 100%; margin-left: 0; padding: 0 0 10vh 2.5rem; text-align: left; }
+  .day.left .day-dot, .day.right .day-dot { left: 0; right: auto; }
 }

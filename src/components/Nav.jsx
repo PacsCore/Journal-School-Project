@@ -1,7 +1,7 @@
 const links = [
   { label: "Tage", href: "#tage" },
   { label: "Museum", href: "#museum" },
-  { label: "Sounds", href: "#sounds" },
+  { label: "Woche", href: "#zeitleiste" },
   { label: "Tisch", href: "#tisch" },
 ];
 

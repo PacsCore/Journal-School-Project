@@ -7,7 +7,7 @@ import { days } from "./data/entries";
 import Nav from "./components/Nav";
 import SketchTable from "./components/SketchTable";
 import Museum from "./components/Museum";
-import timeline from "./components/Timeline";
+import Timeline from "./components/Timeline";
 
 export default function App() {
   useEffect(() => {

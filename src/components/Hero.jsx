@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Delaunay } from "d3-delaunay";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 // Park-Güell-Palette
 const PALETTE = {
@@ -127,14 +127,17 @@ function drawShard(ctx, s, intro, progress) {
   ctx.restore();
 }
 
+const PAPER = [243, 239, 230];
+const DARK = [17, 17, 17];
+const mixColor = (t) =>
+  `rgb(${PAPER.map((c, i) => Math.round(c + (DARK[i] - c) * t)).join(",")})`;
+
 export default function Hero() {
   const sectionRef = useRef(null);
   const canvasRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });
-  const bg = useTransform(scrollYProgress, [0.3, 0.85], ["#f3efe6", "#111111"]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
-  const titleScale = useTransform(scrollYProgress, [0, 0.25], [1, 0.92]);
+  const stickyRef = useRef(null);
+  const titleRef = useRef(null);
+  const hintRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -155,11 +158,30 @@ export default function Hero() {
     resize();
     window.addEventListener("resize", resize);
 
+    // Eine einzige Messung für alles: Wie weit ist die Hero-Section durchgescrollt?
+    const getProgress = () => {
+      const rect = sectionRef.current.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      return total > 0 ? clamp(-rect.top / total) : 0;
+    };
+
     const loop = (now) => {
-      const progress = scrollYProgress.get();
+      const progress = getProgress();
+
+      // Hintergrund: hell → dunkel zwischen 30 % und 85 %
+      stickyRef.current.style.backgroundColor = mixColor(clamp((progress - 0.3) / 0.55));
+
+      // Titel + Hinweis ausblenden in den ersten 25 %
+      const t = clamp(progress / 0.25);
+      titleRef.current.style.opacity = 1 - t;
+      titleRef.current.style.transform = `scale(${1 - 0.08 * t})`;
+      hintRef.current.style.opacity = 1 - t;
+
+      // Steine
       const elapsed = now - start;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (const s of shards) drawShard(ctx, s, clamp((elapsed - s.delay) / 500), progress);
+
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
@@ -168,16 +190,16 @@ export default function Hero() {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
     };
-  }, [scrollYProgress]);
+  }, []);
 
   const word = "BARCELONA";
 
   return (
     <section ref={sectionRef} className="hero">
-      <motion.div className="hero-sticky" style={{ backgroundColor: bg }}>
+      <div ref={stickyRef} className="hero-sticky">
         <canvas ref={canvasRef} className="hero-canvas" />
 
-        <motion.div className="hero-title-wrap" style={{ opacity: titleOpacity, scale: titleScale }}>
+        <div ref={titleRef} className="hero-title-wrap">
           <h1 className="hero-title">
             {word.split("").map((char, i) => (
               <span key={i} style={{ overflow: "hidden", display: "inline-block" }}>
@@ -193,12 +215,10 @@ export default function Hero() {
             ))}
           </h1>
           <p className="hero-sub">2026 · Klasse 8B · 20.–27. September</p>
-        </motion.div>
+        </div>
 
-        <motion.p className="scroll-hint" style={{ opacity: titleOpacity }}>
-          scroll ↓
-        </motion.p>
-      </motion.div>
+        <p ref={hintRef} className="scroll-hint">scroll ↓</p>
+      </div>
     </section>
   );
 }

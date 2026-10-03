@@ -242,3 +242,52 @@ body::before {
   .day, .day.right { width: 100%; margin-left: 0; padding: 0 0 10vh 2.5rem; text-align: left; }
   .day.left .day-dot, .day.right .day-dot { left: 0; right: auto; }
 }
+
+/* ---------- Tage / Skizzen ---------- */
+.day-section { padding: 20vh 6vw; max-width: 1300px; margin: 0 auto; }
+
+.day-section-head { margin-bottom: 12vh; max-width: 700px; }
+.day-section-date { font-family: var(--mono); color: var(--red); letter-spacing: 0.15em; }
+.day-section-head h2 {
+  font-family: var(--display);
+  font-size: clamp(3rem, 9vw, 8rem);
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+.diary { font-size: 1.4rem; font-style: italic; line-height: 1.5; margin-top: 2rem; opacity: 0.85; }
+
+.sketch-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+  align-items: center;
+  margin-bottom: 18vh;
+}
+.sketch-row.flip .sketch-figure { order: 2; }
+
+.sketch-figure { margin: 0; }
+.sketch-float img {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  background: #fff;
+  padding: 14px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+.sketch-figure figcaption { font-family: var(--mono); font-size: 0.75rem; opacity: 0.6; margin-top: 1rem; }
+
+.sketch-meta {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: #d99a2b;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.sketch-text h3 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; margin: 0.6rem 0 1.2rem; }
+.sketch-text p { font-size: 1.25rem; line-height: 1.6; opacity: 0.85; max-width: 38ch; }
+
+@media (max-width: 800px) {
+  .sketch-row { grid-template-columns: 1fr; gap: 3rem; }
+  .sketch-row.flip .sketch-figure { order: 0; }
+}

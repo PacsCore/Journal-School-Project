@@ -18,9 +18,9 @@ export const museums = [
   {
     id: "miro",
     name: "Fundació Joan Miró",
-    date: "TODO",
+    date: "25. September 2026",
     accent: "#e1392b",
-    items: [{ label: "TODO", title: "TODO", note: "TODO" }],
+    items: [{ label: "Werk I", title: "Peinture (Le Chien)", note: "Zuerst dachte ich, das könnte jedes Kind malen. Je länger ich davorstand, desto mehr hat es sich wie Musik angefühlt.", media: { type: "img", src: "/museum/miro/Miro1.jpg" }, }],
   },
   {
     id: "moco",
@@ -44,7 +44,7 @@ export const museums = [
     date: "24.09.",
     accent: "#6b8e3a",
     items: [
-      { label: "Ausstellung", title: "Antoni Tàpies", note: "Bedeutender Künstler Spaniens des 20. Jh. und der Nachkriegszeit. Maler, viele Connections, Austausch mit Picasso." },
+      { label: "Ausstellung", title: " Antoni Tàpies", note: "Bedeutender Künstler Spaniens des 20. Jh. und der Nachkriegszeit. Maler, viele Connections, Austausch mit Picasso." },
     ],
   },
   {

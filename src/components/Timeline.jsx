@@ -47,6 +47,7 @@ export default function Timeline() {
                 <li key={j}>
                   <span>{item.time}</span>
                   {item.text}
+                  {item.media && <img className="day-img" src={item.media.src} alt={item.text} />}
                 </li>
               ))}
             </ul>

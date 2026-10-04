@@ -1,10 +1,67 @@
-export const rooms = [
-  { nr: 1, title: "Die Anfänge", note: "Frühe Malereien, erstaunlich realistisch." },
-  { nr: 2, title: "A Coruña 1891–95", note: "Frühe Werke, schon sehr detailliert gezeichnet." },
-  { nr: 3, title: "Großer Raum", note: "Mehrere Stile ausprobiert, Öl-Landschaften." },
-  { nr: 4, title: "Selbstporträts", note: "In Öl und Kohle, Zeichnungen mit Stift und Tinte." },
-  { nr: 8, title: "Blaue Periode", note: "Blaue Bilder, Porträts. Körper der Frau wird verzerrt." },
-  { nr: 9, title: "Kubismus", note: "Geometrische Formen, Farben neu kombiniert." },
-  { nr: 11, title: "Parade 1917", note: "Video-Raum. Theaterstück mit Kostümen von Picasso." },
-  { nr: 14, title: "Las Meninas", note: "Ein großes Werk, man spürt das Gewicht des Bildes." },
+export const museums = [
+  {
+    id: "picasso",
+    name: "Museu Picasso",
+    date: "TODO",
+    accent: "#2b5bb5",
+    items: [
+      { label: "Raum 1", title: "Die Anfänge", note: "Frühe Malereien, erstaunlich realistisch." },
+      { label: "Raum 2", title: "A Coruña 1891–95", note: "Frühe Werke, schon sehr detailliert gezeichnet." },
+      { label: "Raum 3", title: "Großer Raum", note: "Mehrere Stile ausprobiert, Öl-Landschaften." },
+      { label: "Raum 4", title: "Selbstporträts", note: "In Öl und Kohle, Zeichnungen mit Stift und Tinte." },
+      { label: "Raum 8", title: "Blaue Periode", note: "Blaue Bilder, Porträts. Körper der Frau wird verzerrt." },
+      { label: "Raum 9", title: "Kubismus", note: "Geometrische Formen, Farben neu kombiniert." },
+      { label: "Raum 11", title: "Parade 1917", note: "Video-Raum. Theaterstück mit Kostümen von Picasso." },
+      { label: "Raum 14", title: "Las Meninas", note: "Ein großes Werk, man spürt das Gewicht des Bildes." },
+    ],
+  },
+  {
+    id: "miro",
+    name: "Fundació Joan Miró",
+    date: "TODO",
+    accent: "#e1392b",
+    items: [{ label: "TODO", title: "TODO", note: "TODO" }],
+  },
+  {
+    id: "moco",
+    name: "Moco Museum",
+    date: "TODO",
+    accent: "#2a9d9a",
+    items: [{ label: "TODO", title: "TODO", note: "TODO" }],
+  },
+  {
+    id: "meam",
+    name: "MEAM",
+    date: "23.09.",
+    accent: "#d99a2b",
+    items: [
+      { label: "Gebäude", title: "Museu Europeu d'Art Modern", note: "Ein echt cooles Gebäude. Ich würde gerne wieder hingehen." },
+    ],
+  },
+  {
+    id: "tapies",
+    name: "Fundació Antoni Tàpies",
+    date: "24.09.",
+    accent: "#6b8e3a",
+    items: [
+      { label: "Ausstellung", title: "Antoni Tàpies", note: "Bedeutender Künstler Spaniens des 20. Jh. und der Nachkriegszeit. Maler, viele Connections, Austausch mit Picasso." },
+    ],
+  },
+  {
+    id: "macba",
+    name: "MACBA",
+    date: "TODO",
+    accent: "#b8432b",
+    items: [{ label: "TODO", title: "TODO", note: "TODO" }],
+  },
+  {
+    id: "gaudi",
+    name: "Gaudí & Barcelona",
+    date: "Die ganze Woche",
+    accent: "#1f3f8f",
+    items: [
+      { label: "TODO", title: "TODO z. B. Sagrada Família", note: "TODO" },
+      { label: "TODO", title: "TODO z. B. Park Güell", note: "TODO" },
+    ],
+  },
 ];

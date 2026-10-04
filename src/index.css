@@ -291,3 +291,6 @@ body::before {
   .sketch-row { grid-template-columns: 1fr; gap: 3rem; }
   .sketch-row.flip .sketch-figure { order: 0; }
 }
+
+.room-intro { color: var(--paper) !important; justify-content: space-between; }
+.room-intro h3 { font-family: var(--display); font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; line-height: 0.95; }

@@ -1,7 +1,9 @@
 export const trip = [
   {
     date: "20.09.", weekday: "Sonntag", title: "Anreise", place: "Wien → Barcelona",
-    items: [{ time: "TODO", text: "Flug, Ankunft im Hotel" }],
+    items: [{ time: "6.00 - 12.00", text: "Flug, Ankunft im Hotel. Nach einem langen Flug erreichten wir Barcelona. Es war warm und sonnig. Es war ein schöner Tag. Mit den öffentlichen Verkehrsmitteln fuhren wir zum Hotel. Allerdings war das check-in ins Hostel ein wenig verzögert. Deswegen hatten wir schon am Anfang gleich Freizeit. Ich ging mit einigen Freunden gleich zur Sagrada Familia und konnte die schöne Kathedrale in Echt sehen. Gro0, hoch und mit schönen Fazierungen.",
+    media: { type: "img", src: "/Timeline/Ankunft1.jpg" }
+    }],
   },
   {
     date: "21.09.", weekday: "Montag", title: "TODO", place: "TODO",

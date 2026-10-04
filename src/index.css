@@ -324,3 +324,13 @@ body::before {
 .lightbox-caption span { font-family: var(--mono); font-size: 0.8rem; color: #d99a2b; text-transform: uppercase; letter-spacing: 0.15em; }
 .lightbox-caption h3 { font-size: 2rem; font-weight: 400; margin: 0.4rem 0; }
 .lightbox-caption p { opacity: 0.8; line-height: 1.5; }
+
+.day-img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.day.left .day-img { margin-left: auto; }

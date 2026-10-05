@@ -334,3 +334,10 @@ body::before {
 }
 
 .day.left .day-img { margin-left: auto; }
+
+.masthead {
+  position: absolute;
+  top: 6rem;
+  left: 4vw;
+  z-index: 9;
+}

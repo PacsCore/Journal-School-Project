@@ -22,6 +22,7 @@ export default function App() {
   return (
     <main id="top">
       <Nav />
+      <header className="mastHead">© 2026 - Enrique Achacoso</header>
       <Hero />
       <Timeline />
       <SketchTable />

@@ -14,7 +14,9 @@ export const trip = [
   {
     date: "22.09.", weekday: "Dienstag", title: "Picasso", place: "Barcelona · Museu Picasso",
     items: [
-      { time: "9.00 - 14.00", text: "Da waren wir bei dem Museu Picasso" },
+      { time: "9.00 - 14.00", text: "Da waren wir bei dem Museu Picasso",
+        media: { type: "img", src: "/Timeline/Picasso.jpg" }
+       },
     ],
   },
   {

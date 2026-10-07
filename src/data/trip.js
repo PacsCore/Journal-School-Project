@@ -30,7 +30,7 @@ export const trip = [
   {
     date: "24.09.", weekday: "Donnerstag", title: "La Mercé", place: "Cathedral de Barcelona · La Mercé",
     items: [
-      { time: "TODO", text: "An dem Tag fand La Mercé statt, eine traditionelle Feste in Barcelona.",
+      { time: "TODO", text: "An dem Tag fand La Mercé statt, ein traditionelles Fest in Barcelona.",
         media: { type: "img", src: "/Timeline/Parade.jpg" }
        },
     ],

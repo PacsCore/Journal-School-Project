@@ -12,9 +12,9 @@ export const trip = [
     },],
   },
   {
-    date: "22.09.", weekday: "Dienstag", title: "Picasso", place: "Barcelona · Museu Picasso",
+    date: "22.09.", weekday: "Dienstag", title: "Picasso", place: "Barcelona · Museu Picasso · MEAM",
     items: [
-      { time: "9.00 - 14.00", text: "Da waren wir bei dem Museu Picasso",
+      { time: "9.00 - 14.00", text: "Da waren wir bei dem Museu Picasso und konnten die Werke von Pablo Picasso bewundern. Es war beeindruckend, die Entwicklung seines Stils und seine verschiedenen Phasen zu sehen. Danach besuchten wir das MEAM, das Museu Europeu d'Art Modern, wo wir moderne Kunstwerke betrachteten.",
         media: { type: "img", src: "/Timeline/Picasso.jpg" }
        },
     ],

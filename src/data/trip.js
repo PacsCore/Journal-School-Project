@@ -12,7 +12,7 @@ export const trip = [
     },],
   },
   {
-    date: "22.09.", weekday: "Dienstag", title: " & Räume", place: "TODO",
+    date: "22.09.", weekday: "Dienstag", title: "Picasso", place: "Barcelona · Museu Picasso",
     items: [
       { time: "TODO", text: "La Clariana skizziert" },
       { time: "TODO", text: "Porträts gezeichnet" },

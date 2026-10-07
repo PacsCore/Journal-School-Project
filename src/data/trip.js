@@ -28,10 +28,11 @@ export const trip = [
     ],
   },
   {
-    date: "24.09.", weekday: "Donnerstag", title: "Antoni Tàpies", place: "Fundació Tàpies · Strand",
+    date: "24.09.", weekday: "Donnerstag", title: "La Mercé", place: "Cathedral de Barcelona · La Mercé",
     items: [
-      { time: "TODO", text: "Tàpies-Ausstellung" },
-      { time: "TODO", text: "Hund am Strand gezeichnet" },
+      { time: "TODO", text: "An dem Tag fand La Mercé statt, eine traditionelle Feste in Barcelona.",
+        media: { type: "img", src: "/Timeline/Parade.jpg" }
+       },
     ],
   },
   {

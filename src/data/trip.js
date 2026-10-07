@@ -12,7 +12,7 @@ export const trip = [
     },],
   },
   {
-    date: "22.09.", weekday: "Dienstag", title: "Menschen & Räume", place: "TODO",
+    date: "22.09.", weekday: "Dienstag", title: " & Räume", place: "TODO",
     items: [
       { time: "TODO", text: "La Clariana skizziert" },
       { time: "TODO", text: "Porträts gezeichnet" },

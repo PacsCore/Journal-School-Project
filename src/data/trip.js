@@ -20,11 +20,11 @@ export const trip = [
     ],
   },
   {
-    date: "23.09.", weekday: "Mittwoch", title: "Strandtag", place: "Barceloneta · MEAM",
+    date: "23.09.", weekday: "Mittwoch", title: "Strandtag", place: "STUCOM · Barceloneta · Sagrada Familia",
     items: [
-      { time: "TODO", text: "Schulbesuch" },
-      { time: "TODO", text: "Strand" },
-      { time: "TODO", text: "MEAM – Museu Europeu d'Art Modern" },
+      { time: "TODO", text: "Strandtag in Barceloneta. Zuerst gingen wir zum STUCOM, eine Schule in Barcelona. Wir lernten viele interessante Dinge kennen. Nachdem wir die Schule besichtigt hatten, gingen wir zum Strand von Barceloneta. Dort verbrachten wir den Tag am Meer, genossen die Sonne und das Wasser. Am Abend besuchten wir die Sagrada Familia, die beeindruckende Basilika von Antoni Gaudí.", 
+        media: { type: "img", src: "/Timeline/Beach.jpg" }
+       },
     ],
   },
   {

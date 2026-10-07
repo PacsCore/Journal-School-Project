@@ -6,8 +6,10 @@ export const trip = [
     }],
   },
   {
-    date: "21.09.", weekday: "Montag", title: "TODO", place: "TODO",
-    items: [{ time: "TODO", text: "Skizze: Stinkfrucht" }],
+    date: "21.09.", weekday: "Montag", title: "Mercat de la Boqueria / MACBA", place: "Barcelona · MACBA",
+    items: [{ time: "9.00 - 16.00", text: "Mercat de la Boqueria & MACBA. Wir besuchten den berühmten Markt Mercat de la Boqueria und konnten die Vielfalt an frischen Lebensmitteln und lokalen Spezialitäten erleben. Danach ging es weiter zum MACBA, dem Museum für zeitgenössische Kunst, wo wir einige beeindruckende Ausstellungen sahen.", 
+      media: { type: "img", src: "/Timeline/Mercat.jpg" } 
+    },],
   },
   {
     date: "22.09.", weekday: "Dienstag", title: "Menschen & Räume", place: "TODO",

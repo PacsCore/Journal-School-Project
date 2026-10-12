@@ -37,14 +37,20 @@ export const trip = [
   },
   {
     date: "25.09.", weekday: "Freitag", title: "Moco & Miró", place: "Moco Museum · Fundació Joan Miró",
-    items: [{ time: "9.00 - 17.00", text: "Zuerst besichtigten wir das Moco Museum, wo wir moderne Kunstwerke betrachteten. Anschließend gingen wir zur Fundació Joan Miró, wo wir die Werke des Künstlers Joan Miró entdeckten. Beim Moco Museum sahen wir viele bekannte Künstler." }],
+    items: [{ time: "9.00 - 17.00", text: "Zuerst besichtigten wir das Moco Museum, wo wir moderne Kunstwerke betrachteten. Anschließend gingen wir zur Fundació Joan Miró, wo wir die Werke des Künstlers Joan Miró entdeckten. Beim Moco Museum sahen wir viele bekannte Künstler.",
+        media: { type: "img", src: "/Timeline/Moco.jpg" }
+     }],
   },
   {
-    date: "26.09.", weekday: "Samstag", title: "TODO", place: "TODO",
-    items: [{ time: "TODO", text: "TODO" }],
+    date: "26.09.", weekday: "Samstag", title: "Letzter Tag", place: "Barceloneta · Camp Nou ",
+    items: [{ time: "11.00 - 18.00", text: "Da waren einige von uns noch in der Stadt unterwegs, andere haben waren im Stadion Camp Nou.",
+        media: { type: "img", src: "/Timeline/Strand.jpg" }
+     }],
   },
   {
     date: "27.09.", weekday: "Sonntag", title: "Abreise", place: "Barcelona → Wien",
-    items: [{ time: "TODO", text: "Rückflug" }],
+    items: [{ time: "10.00 - 12.00", text: "Wir packten unsere Koffer und machten uns auf den Weg zum Flughafen, um unseren Rückflug nach Wien zu nehmen.",
+        media: { type: "img", src: "/Timeline/Heimflug.jpg" }
+     }],
   },
 ];

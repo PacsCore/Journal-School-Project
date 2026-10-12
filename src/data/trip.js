@@ -36,8 +36,8 @@ export const trip = [
     ],
   },
   {
-    date: "25.09.", weekday: "Freitag", title: "TODO", place: "TODO",
-    items: [{ time: "TODO", text: "TODO" }],
+    date: "25.09.", weekday: "Freitag", title: "Moco & Miró", place: "Moco Museum · Fundació Joan Miró",
+    items: [{ time: "9.00 - 17.00", text: "Zuerst besichtigten wir das Moco Museum, wo wir moderne Kunstwerke betrachteten. Anschließend gingen wir zur Fundació Joan Miró, wo wir die Werke des Künstlers Joan Miró entdeckten. Beim Moco Museum sahen wir viele bekannte Künstler." }],
   },
   {
     date: "26.09.", weekday: "Samstag", title: "TODO", place: "TODO",

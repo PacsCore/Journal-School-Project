@@ -39,7 +39,7 @@ function inCartouche(x, y, w, h) {
 }
 
 function buildShards(ctx, w, h) {
-  const count = Math.round((w * h) / 1300);
+  const count = Math.round((w * h) / (w < 768 ? 2600 : 1300)); // Handy: weniger Scherben
   const step = Math.sqrt((w * h) / count);
   const maxLen = Math.hypot(w / 2, h / 2);
 
@@ -146,10 +146,14 @@ export default function Hero() {
     let raf;
     const start = performance.now();
 
+    let lastW = 0, lastH = 0;
     const resize = () => {
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
+      // Handy: Adressleiste löst resize aus, Größe bleibt aber gleich → nicht neu bauen
+      if (w === lastW && h === lastH) return;
+      lastW = w; lastH = h;
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);

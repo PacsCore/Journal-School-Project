@@ -6,7 +6,9 @@ const ease = [0.22, 1, 0.36, 1];
 export default function SketchCard({ entry, index }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [120 * entry.depth, -120 * entry.depth]);
+  // Handy: halbe Parallax-Stärke, damit nichts überlappt
+  const depth = typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches ? entry.depth / 2 : entry.depth;
+  const y = useTransform(scrollYProgress, [0, 1], [120 * depth, -120 * depth]);
   const flip = index % 2 === 1;
 
   return (

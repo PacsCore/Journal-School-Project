@@ -20,7 +20,7 @@ export default function Nav() {
   return (
     <nav className="nav">
       <RollLink label="BCN ’26" href="#top" />
-      <div style={{ display: "flex", gap: "2rem" }}>
+      <div className="nav-links">
         {links.map((l) => <RollLink key={l.href} {...l} />)}
       </div>
     </nav>

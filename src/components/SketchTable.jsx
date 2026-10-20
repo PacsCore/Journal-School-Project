@@ -16,19 +16,27 @@ export default function SketchTable() {
 
   // Grobes Raster + Zufall, nur einmal berechnet
   const cards = useMemo(() => {
-    const cols = Math.ceil(Math.sqrt(images.length * 1.5));
-    const rows = Math.ceil(images.length / cols);
-    const order = images.map((_, i) => i).sort(() => Math.random() - 0.5); // Bilder zufällig auf Zellen verteilen
-    return images.map((src, i) => {
+    // Handy: nur 12 zufällige Bilder in 3 Spalten, damit Platz zum Scrollen bleibt
+    const mobile = window.matchMedia("(max-width: 768px)").matches;
+    const shuffled = [...images].sort(() => Math.random() - 0.5);
+    const list = mobile ? shuffled.slice(0, 12) : images;
+    const cols = mobile ? 3 : Math.ceil(Math.sqrt(list.length * 1.5));
+    const rows = Math.ceil(list.length / cols);
+    const order = list.map((_, i) => i).sort(() => Math.random() - 0.5); // Bilder zufällig auf Zellen verteilen
+    return list.map((src, i) => {
       const cell = order[i];
       const col = cell % cols;
       const row = Math.floor(cell / cols);
       return {
         src,
-        left: (col / cols) * 88 + rand(0, 88 / cols - 6),
-        top: (row / rows) * 82 + rand(0, 82 / rows - 4),
+        left: mobile
+          ? Math.min(64, Math.max(0, col * 32 + rand(-2, 2)))
+          : (col / cols) * 88 + rand(0, 88 / cols - 6),
+        top: mobile
+          ? row * (80 / (rows - 1)) + rand(0, 3)
+          : (row / rows) * 82 + rand(0, 82 / rows - 4),
         rotate: rand(-8, 8),
-        width: Math.round(rand(150, 240)),
+        size: Math.random(), // 0–1, Breite kommt aus dem CSS (Desktop 150–240px, Handy 90–140px)
       };
     });
   }, []);
@@ -51,7 +59,7 @@ export default function SketchTable() {
             dragElastic={0.1}
             dragMomentum={false}
             onPointerDown={(ev) => (ev.currentTarget.style.zIndex = ++zRef.current)}
-            style={{ left: `${c.left}%`, top: `${c.top}%`, width: `min(${c.width}px, 38vw)`, zIndex: 1 }}
+            style={{ left: `${c.left}%`, top: `${c.top}%`, "--size": c.size, zIndex: 1 }}
           >
             {/* Innen: nur Optik */}
             <motion.figure

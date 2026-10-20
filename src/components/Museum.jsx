@@ -52,7 +52,7 @@ export default function Museum({ museum }) {
             <article key={i} className="room-card">
               {item.media &&
                 (item.media.type === "video" ? (
-                  <video className="room-media" src={item.media.src} autoPlay muted loop playsInline />
+                  <video className="room-media" src={item.media.src} poster={item.media.poster} autoPlay muted loop playsInline />
                 ) : (
                   <motion.img
                     layoutId={idFor(i)}

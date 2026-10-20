@@ -40,42 +40,35 @@ export default function SketchTable() {
         WAS WIR GEMACHT HABEN
       </h2>
 
-      <motion.div
-        ref={tableRef}
-        className="table"
-        initial="hidden"
-        whileInView="shown"
-        viewport={{ once: true, amount: 0.15 }}
-      >
+      <div ref={tableRef} className="table">
         {cards.map((c, i) => (
-          <motion.figure
+          // Außen: nur Ziehen
+          <motion.div
             key={c.src}
-            className="table-card"
+            className="table-drag"
             drag
             dragConstraints={tableRef}
-            dragElastic={0.15}
+            dragElastic={0.1}
+            dragMomentum={false}
             onPointerDown={(ev) => (ev.currentTarget.style.zIndex = ++zRef.current)}
-            whileDrag={{ scale: 1.06 }}
-            variants={{
-              hidden: { y: -180, opacity: 0, scale: 1.15 },
-              shown: {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                transition: { type: "spring", stiffness: 260, damping: 18, delay: i * 0.08 },
-              },
-            }}
-            style={{
-              left: `${c.left}%`,
-              top: `${c.top}%`,
-              rotate: c.rotate,
-              width: `min(${c.width}px, 38vw)`,
-            }}
+            style={{ left: `${c.left}%`, top: `${c.top}%`, width: `min(${c.width}px, 38vw)`, zIndex: 1 }}
           >
-            <img src={c.src} alt="" draggable={false} />
-          </motion.figure>
+            {/* Innen: nur Optik */}
+            <motion.figure
+              className="table-card"
+              initial={{ opacity: 0, y: -60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 260, damping: 18, delay: (i % 8) * 0.06 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 1.05 }}
+              style={{ rotate: c.rotate }}
+            >
+              <img src={c.src} alt="" draggable={false} />
+            </motion.figure>
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

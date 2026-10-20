@@ -103,17 +103,23 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
-.table-card {
+.table-drag {
   position: absolute;
-  background: #fff;
-  color: var(--ink);
-  padding: 10px 10px 34px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   cursor: grab;
   touch-action: none;
 }
 
-.table-card:active { cursor: grabbing; }
+.table-drag:active { cursor: grabbing; }
+
+.table-card {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  padding: 10px 10px 34px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.table-card img { pointer-events: none; }
 
 /* ---------- Museum ---------- */
 .museum-sticky {

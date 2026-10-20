@@ -13,14 +13,6 @@ export const museums = [
       { label: "Werk 6", title: "Las Meninas – Serie", note: "Eine bunte Version von Las Meninas und kleine Studien daneben.", media: { type: "video", src: "/museum/picasso/06-las-meninas-raum.mp4", poster: "/museum/picasso/06-las-meninas-raum.jpg" }, },
       { label: "Werk 7", title: "Las Meninas: Infanta Margarita María (1957)", note: "Picasso hat die kleine Prinzessin Margarita mehrmals gemalt.", media: { type: "video", src: "/museum/picasso/07-infanta-margarita.mp4", poster: "/museum/picasso/07-infanta-margarita.jpg" }, },
       { label: "Werk 8", title: "Las Meninas: weitere Infanta-Studien", note: "Noch mehr Bilder von der kleinen Prinzessin.", media: { type: "video", src: "/museum/picasso/08-infanta-margarita-2.mp4", poster: "/museum/picasso/08-infanta-margarita-2.jpg" }, },
-      { label: "Raum 1", title: "Die Anfänge", note: "Frühe Malereien, erstaunlich realistisch." },
-      { label: "Raum 2", title: "A Coruña 1891–95", note: "Frühe Werke, schon sehr detailliert gezeichnet." },
-      { label: "Raum 3", title: "Großer Raum", note: "Mehrere Stile ausprobiert, Öl-Landschaften." },
-      { label: "Raum 4", title: "Selbstporträts", note: "In Öl und Kohle, Zeichnungen mit Stift und Tinte." },
-      { label: "Raum 8", title: "Blaue Periode", note: "Blaue Bilder, Porträts. Körper der Frau wird verzerrt." },
-      { label: "Raum 9", title: "Kubismus", note: "Geometrische Formen, Farben neu kombiniert." },
-      { label: "Raum 11", title: "Parade 1917", note: "Video-Raum. Theaterstück mit Kostümen von Picasso." },
-      { label: "Raum 14", title: "Las Meninas", note: "Ein großes Werk, man spürt das Gewicht des Bildes." },
     ],
   },
   {
@@ -84,15 +76,6 @@ export const museums = [
       { label: "Werk 6", title: "Zwei Figuren in Blau - István Sándorfi", note: "Zwei Figuren in Blau. Das Bild sieht fast aus wie ein Foto.", media: { type: "img", src: "/museum/meam/06-sandorfi-blaue-figuren.jpg" }, },
       { label: "Werk 7", title: "Mann mit Wolfskopf", note: "Ein Mann mit Wolfskopf sitzt auf einem Thron. Er hält ein Lamm, unten liegen Totenköpfe.", media: { type: "img", src: "/museum/meam/07-wolf-mit-lamm.jpg" }, },
       { label: "Werk 8", title: "Foto: Flugzeugträger", note: "Ein Foto vom Turm eines Flugzeugträgers im Abendlicht.", media: { type: "img", src: "/museum/meam/08-flugzeugtraeger-foto.jpg" }, },
-    ],
-  },
-  {
-    id: "tapies",
-    name: "Fundació Antoni Tàpies",
-    date: "24.09.",
-    accent: "#6b8e3a",
-    items: [
-      { label: "Ausstellung", title: " Antoni Tàpies", note: "Bedeutender Künstler Spaniens des 20. Jh. und der Nachkriegszeit. Maler, viele Connections, Austausch mit Picasso." },
     ],
   },
 ];

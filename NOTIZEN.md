@@ -56,3 +56,14 @@
 - 16-hoffnung-des-verurteilten-2 | … II (blau) | 
 - 17-hoffnung-des-verurteilten-3 | … III (rot) | 
 - 18-leeres-bild-blauer-punkt | fast leeres Bild mit einem blauen Punkt (?) | 
+
+# Skizzen
+<!-- Dateien in public/sketches/, Format TT-MM_titel.jpg. Format hier: datei | Titel | Ort | meine Notizen -->
+- 21-09_stinkfrucht | Stinkfrucht | MACBA | Notiz auf der Skizze: "Stinkfrucht, wächst meistens in Südostasien. Bekannt durch ihren erkennbaren Geruch und ihr essbares Fruchtfleisch."
+- 22-09_la-clariana | La Clariana | Park bei der Sagrada Família | 
+- 22-09_treppenhaus-meam | Treppenhaus | MEAM | Querformat
+- 22-09_florian | Florian | MEAM | Klassenkollege
+- 22-09_lilo | Lilo | MEAM | Klassenkollegin
+- 22-09_silas | Silas | MEAM | Klassenkollege
+- 24-09_hund-am-strand | Hund am Strand | Strand | 
+- 25-09_gebaeude | Gebäude mit Palme | Barcelona | 

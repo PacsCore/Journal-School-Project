@@ -97,7 +97,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Skizzen-Tisch ---------- */
 .table {
   position: relative;
-  height: 85vh;
+  height: 130vh;
   background: #1e1b17;
   border-radius: 6px;
   overflow: hidden;
@@ -105,22 +105,15 @@ img { max-width: 100%; display: block; }
 
 .table-card {
   position: absolute;
-  width: min(220px, 42vw);
   background: #fff;
   color: var(--ink);
-  padding: 10px 10px 30px;
+  padding: 10px 10px 34px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   cursor: grab;
   touch-action: none;
 }
 
 .table-card:active { cursor: grabbing; }
-
-.table-card figcaption {
-  font-family: var(--mono);
-  font-size: 11px;
-  margin-top: 8px;
-}
 
 /* ---------- Museum ---------- */
 .museum-sticky {

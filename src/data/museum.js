@@ -2,7 +2,7 @@ export const museums = [
   {
     id: "picasso",
     name: "Museu Picasso",
-    date: "TODO",
+    date: "22. September 2026",
     accent: "#2b5bb5",
     items: [
       { label: "Werk 1", title: "Die erste Kommunion (1896)", note: "Picasso hat dieses Bild mit nur 15 Jahren gemalt.", media: { type: "video", src: "/museum/picasso/01-erste-kommunion.mp4", poster: "/museum/picasso/01-erste-kommunion.jpg" }, },
